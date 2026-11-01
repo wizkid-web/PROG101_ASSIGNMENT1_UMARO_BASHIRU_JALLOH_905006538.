@@ -1,0 +1,93 @@
+# ClassWatch SL: School Attendance and Learning Support Alert System
+
+**Course:** PROG101 Principles of Programming Logic and Design
+**Assignment:** Designing Logical Solutions for Sierra Leone Community Challenges
+**Topic chosen:** Quality Education
+**Student:** Student Name (Student ID)
+**Repository name:** `PROG101_Assignment1_StudentName_StudentID`
+
+> This repository contains a **logical design only** (algorithm, pseudocode, flowcharts and modules). No source code is required for this assignment.
+
+## 1. The problem
+
+Many children in Sierra Leone are in school but are not learning enough, and some leave before they finish. In large classes, teachers record attendance in paper registers and marks in exercise books, so a pupil who is often absent and falling behind is often noticed too late.
+
+## 2. The proposed solution
+
+ClassWatch SL takes each pupil's attendance and subject scores, decides if the pupil is **ON TRACK**, at **MEDIUM RISK** or at **HIGH RISK**, and suggests a simple action for the teacher or head teacher. At the end it shows a class summary.
+
+| Role | What they do |
+|------|--------------|
+| Class teacher | Enters attendance and scores |
+| Head teacher | Reads alerts and arranges support |
+| District education office | Reads summary reports (no pupil names) |
+
+## 3. Sustainable Development Goal
+
+**SDG 4: Quality Education.** Target 4.1 (free, equitable and quality education with effective learning outcomes) and Target 4.5 (equal access for the vulnerable).
+
+## 4. Open Source and Digital Public Good
+
+The design is shared under an open licence so that schools, universities and the Ministry can reuse and improve it. It follows the nine-indicator Digital Public Goods Standard: SDG relevance, open licence, clear ownership, documentation, data export in open formats, privacy, standards, do no harm, and protection of personal data.
+
+## 5. Key logic
+
+| Item | Value |
+|------|-------|
+| Minimum attendance rate | 80 percent |
+| Pass mark | 50 |
+| Subjects | Mathematics, English, Science |
+
+| Attendance below 80 | Average below 50 | Result |
+|---|---|---|
+| Yes | Yes | HIGH RISK |
+| Yes | No | MEDIUM RISK |
+| No | Yes | MEDIUM RISK |
+| No | No | ON TRACK |
+
+## 6. Repository contents
+
+| File | Description |
+|------|-------------|
+| `PROG101_Assignment1_Report.docx` | Full report (rationale, algorithm, pseudocode, flowcharts, modules, outputs) |
+| `Algorithm_and_Pseudocode.md` | Step-by-step algorithm and pseudocode |
+| `flowcharts/` | Three flowchart images and Mermaid source |
+| `README.md` | This file |
+
+## 7. Flowchart preview
+
+```mermaid
+flowchart TD
+    A([START]) --> B[/Input class and number of pupils/]
+    B --> C{More pupils?}
+    C -- Yes --> D[/Input name, attendance, scores/]
+    D --> E[Calculate attendance rate and average]
+    E --> F{Risk level}
+    F --> G[/Show status and action/]
+    G --> C
+    C -- No --> H[/Show class summary/]
+    H --> I([END])
+```
+
+## 8. Sample scenario
+
+| Pupil | Attendance | Average | Result |
+|-------|-----------|---------|--------|
+| Aminata Kamara | 95.0% | 72.3 | ON TRACK |
+| Mohamed Sesay | 75.0% | 63.3 | MEDIUM RISK |
+| Fatmata Bangura | 60.0% | 41.0 | HIGH RISK |
+| Ibrahim Conteh | 90.0% | 45.0 | MEDIUM RISK |
+
+## 9. Licence
+
+Design documents: Creative Commons Attribution 4.0 (CC BY 4.0). Any future software built from this design: MIT Licence.
+
+## 10. How to contribute
+
+Open an issue to suggest an improvement, translate messages into Krio, Mende or Temne, or share ideas for more subjects and thresholds. Do not post real pupil data.
+
+## 11. References
+
+United Nations (no date) *Goal 4: Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all*. Available at: https://sdgs.un.org/goals/goal4.
+
+Digital Public Goods Alliance (no date) *The DPG Standard*. Available at: https://github.com/DPGAlliance/DPG-Standard/blob/main/standard.md.
